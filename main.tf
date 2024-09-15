@@ -99,9 +99,8 @@ resource "google_cloudbuild_trigger" "build_beam_trigger" {
 echo "Set build version"
 VERSION=`cat gradle.properties| grep "^version=" | cut -d '=' -f 2 | cut -d '-' -f 1`
 COMMIT=`git rev-parse --short HEAD`
-BRANCH=`git branch --show-current`
-echo "Version is $VERSION-$BRANCH-$COMMIT"
-./release/src/main/scripts/set_version.sh $VERSION-$BRANCH-$COMMIT
+echo "Version is $VERSION-$COMMIT"
+./release/src/main/scripts/set_version.sh $VERSION-$COMMIT
 echo "Build Gradle project ${each.key}"
 ./gradlew -p ${each.key} -Ppublishing publishAllPublicationsToTestPublicationLocalRepository
 SCRIPT

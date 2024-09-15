@@ -103,11 +103,11 @@ any of the branches of your repo, the lates (new) commit of each branch will bui
 
 The packages are published with the following version number pattern:
 
-- `X.XX.X-<BRANCH>-<SHORT COMMIT ID>-SNAPSHOT`
+- `X.XX.X-<SHORT COMMIT ID>-SNAPSHOT`
 
 For instance:
 
-- `2.55.0-master-8a74a1c2-SNAPSHOT`
+- `2.55.0-8a74a1c2-SNAPSHOT`
 
 So every time you are writing to a branch in your fork, with the idea of later sending a pull
 request, you will be able to easily identify what packages correspond exactly to your changes

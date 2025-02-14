@@ -11,7 +11,7 @@ locals {
 }
 
 module "beam_build_proj" {
-  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/project?ref=v29.0.0"
+  source = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/project?ref=v37.3.0"
   name   = var.project_id
   services = [
     "cloudbuild.googleapis.com",
@@ -21,7 +21,7 @@ module "beam_build_proj" {
 }
 
 module "beam_build_registry_docker" {
-  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/artifact-registry?ref=v29.0.0"
+  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/artifact-registry?ref=v37.3.0"
   project_id = module.beam_build_proj.project_id
   location   = var.region
   name       = "beam-build-docker"
@@ -40,7 +40,7 @@ module "beam_build_registry_docker" {
 }
 
 module "beam_build_registry_maven" {
-  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/artifact-registry?ref=v29.0.0"
+  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric//modules/artifact-registry?ref=v37.3.0"
   project_id = module.beam_build_proj.project_id
   location   = var.region
   name       = "beam-build-maven"
